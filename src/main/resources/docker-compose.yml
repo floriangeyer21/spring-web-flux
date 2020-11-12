@@ -1,0 +1,15 @@
+version: "3"
+services:
+  test:
+    image: mongo:latest
+    container_name: "test"
+    restart: always
+    ports:
+      - 27017:27017
+  dockers:
+    image: dockers:1.0
+    container_name: "dockers"
+    ports:
+      - 8080:8080
+    links:
+      - test
